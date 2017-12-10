@@ -19,6 +19,9 @@
     "electron-packager": "^10.1.0",
     "rimraf": "^2.6.2"
   },
+  "files": [
+    "dist"
+  ],
   "babel": {
     "presets": [
       "es2015"
