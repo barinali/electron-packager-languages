@@ -1,6 +1,8 @@
 Electron Packager Plugin: Languages
 ---------------------------
 [![GitHub license](https://img.shields.io/github/license/barinali/electron-packager-languages.svg)](https://github.com/barinali/electron-packager-languages/blob/master/LICENSE)
+[![Travis CI](https://img.shields.io/travis/barinali/electron-packager-languages.svg)](https://travis-ci.org/barinali/electron-packager-languages/)
+
 
 # Reason
 
