@@ -15,11 +15,15 @@ const packagerOptions = {
   out: './build/',
   overwrite: true,
   electronVersion: '1.7.5',
+  prune: false
 };
 
 const testPlatform = (platform, done) => packager({ ...packagerOptions, platform }, done);
 
 const testCase = function (err, appPaths) {
+  if (err) {
+    assert.fail('The packaging process is failed!');
+  }
   const appPath = path.resolve('.', appPaths[0]);
   const resourcePath = path.resolve(appPath, `${APP_NAME}.app/Contents/Resources`);
   const resources = fs.readdirSync(resourcePath);
