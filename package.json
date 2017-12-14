@@ -8,6 +8,9 @@
   },
   "author": "Ali BARIN <ali.barin53@gmail.com>",
   "license": "BSD-2-Clause",
+  "engines": {
+    "node": ">=8.9.2"
+  },
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "node test/specs/main"
