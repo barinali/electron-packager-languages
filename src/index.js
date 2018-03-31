@@ -24,6 +24,13 @@ module.exports = function languages(languages) {
       languageFolders.filter((langFolder) => !excludedLanguages.includes(langFolder)).forEach((langFolder) => {
         rimraf.sync(path.resolve(resourcePath, langFolder))
       });
+    } else if (['linux', 'windows'].includes(platform)) {
+      const languageFolder = path.resolve(buildPath, '..', '..', 'locales');
+      const excludedLanguages = languages.map(l => `${l}.pak`);
+
+      const languagePacks = fs.readdirSync(languageFolder);
+      languagePacks.filter(lang => !excludedLanguages.includes(lang))
+        .forEach(lang => rimraf.sync(path.resolve(languageFolder, lang)));
     }
 
     callback();
