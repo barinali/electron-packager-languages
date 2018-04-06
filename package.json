@@ -13,14 +13,21 @@
   },
   "scripts": {
     "build": "babel src --out-dir dist",
+    "lint": "eslint src/**/*.js",
     "test": "babel-node test/specs/main"
+  },
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "husky": "^0.15.0-rc.13",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "electron-packager": "^10.1.0",
-    "rimraf": "^2.6.2"
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0"
   },
   "files": [
     "dist"
@@ -32,5 +39,10 @@
     "presets": [
       "env"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
