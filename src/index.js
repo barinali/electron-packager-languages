@@ -12,10 +12,8 @@ function walkDir(dir, regex = /./g) {
       fs.statSync(path.resolve(dir, currentPath)).isDirectory() && regex.test(currentPath));
 }
 
-// eslint-disable-next-line max-params
 module.exports = function setLanguages(languages) {
   return function electronPackagerLanguages(buildPath, electronVersion, platform, arch, callback) {
-    // eslint-disable-next-line
     if (['darwin', 'mas'].includes(platform)) {
       const resourcePath = getResourcePath(buildPath);
       const excludedLanguages = languages.map(l => `${l}.lproj`);
