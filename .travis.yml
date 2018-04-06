@@ -3,4 +3,6 @@ node_js:
   - 4
   - "lts/*"
   - "node"
-os: osx
+os: linux
+dist: trusty
+sudo: required
