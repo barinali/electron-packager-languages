@@ -1,19 +1,20 @@
 {
   "name": "electron-packager-languages",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "repository": "git@github.com:barinali/electron-packager-languages.git",
   "bugs": {
     "url": "https://github.com/barinali/electron-packager-languages/issues"
   },
   "author": "Ali BARIN <ali.barin53@gmail.com>",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint .",
+    "prepublish": "npm run build",
     "test": "babel-node test/specs/main"
   },
   "dependencies": {
