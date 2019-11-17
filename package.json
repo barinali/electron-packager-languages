@@ -18,12 +18,13 @@
     "test": "babel-node test/specs/main"
   },
   "dependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "electron-packager": "^10.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -34,11 +35,15 @@
     "dist"
   ],
   "babel": {
-    "plugins": [
-      "transform-object-rest-spread"
-    ],
     "presets": [
-      "env"
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "6"
+          }
+        }
+      ]
     ]
   },
   "husky": {
