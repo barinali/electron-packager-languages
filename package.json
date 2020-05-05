@@ -14,15 +14,17 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint .",
-    "prepublish": "npm run build",
-    "test": "babel-node test/specs/main"
+    "prepublish": "yarn run snyk-protect && npm run build",
+    "test": "babel-node test/specs/main",
+    "snyk-protect": "snyk protect"
   },
   "dependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "electron-packager": "^10.1.0",
@@ -50,5 +52,6 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  }
+  },
+  "snyk": true
 }
