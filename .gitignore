@@ -60,4 +60,4 @@ typings/
 build/
 dist/
 .vscode/
-package-lock.json
+yarn.lock
