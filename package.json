@@ -14,7 +14,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "lint": "eslint .",
-    "prepublish": "yarn run snyk-protect && npm run build",
+    "prepublish": "npm run build",
     "test": "babel-node test/specs/main",
     "snyk-protect": "snyk protect"
   },
