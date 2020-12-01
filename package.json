@@ -24,7 +24,7 @@
     "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "rimraf": "^2.6.2",
-    "snyk": "^1.317.0"
+    "snyk": "^1.425.4"
   },
   "devDependencies": {
     "electron-packager": "^10.1.0",
