@@ -1,13 +1,26 @@
 {
   "name": "electron-packager-languages",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "dist/index.js",
   "repository": "git@github.com:barinali/electron-packager-languages.git",
   "bugs": {
     "url": "https://github.com/barinali/electron-packager-languages/issues"
   },
   "author": "Ali BARIN <ali.barin53@gmail.com>",
+  "contributors": [
+    {
+      "name": "electron-packager-languages contributors",
+      "url": "https://github.com/barinali/electron-packager-languages/graphs/contributors"
+    }
+  ],
   "license": "MIT",
+  "keywords": [
+    "electron-packager",
+    "languages",
+    "app store",
+    "play store",
+    "electron"
+  ],
   "engines": {
     "node": ">6.0.0"
   },
