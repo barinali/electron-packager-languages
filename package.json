@@ -39,12 +39,12 @@
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
-    "electron-packager": "^10.1.0",
+    "electron-packager": "^15.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
     "husky": "^0.15.0-rc.13",
-    "snyk": "^1.425.4"
+    "snyk": "^1.521.0"
   },
   "files": [
     "dist"
