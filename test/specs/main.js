@@ -14,8 +14,7 @@ const packagerOptions = {
   name: APP_NAME,
   out: './build/',
   overwrite: true,
-  electronVersion: '1.7.5',
-  prune: false,
+  electronVersion: '12.0.2',
 };
 
 function getLanguageFolderPath(givenPath, platform) {
@@ -80,7 +79,7 @@ function testCase(appPaths, platform) {
 function testPlatform(platform) {
   return packager({ ...packagerOptions, platform })
     .then(appPaths => testCase(appPaths, platform))
-    .catch(err => assert.fail(err, 'The packaging process is failed!'));
+    .catch(err => assert.fail(`The packaging process is failed! ${err}`));
 }
 
 
