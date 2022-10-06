@@ -44,7 +44,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0",
     "husky": "^0.15.0-rc.13",
-    "snyk": "^1.521.0"
+    "snyk": "^1.996.0"
   },
   "files": [
     "dist"
