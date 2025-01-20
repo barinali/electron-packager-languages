@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const rimraf = require('rimraf');
+const debug = require('debug');
+
+const d = debug('electron-forge:packager:languages');
 
 function getLanguageFolderPath(givenPath, platform) {
   switch (platform) {
@@ -50,10 +53,10 @@ module.exports = function setLanguages(languages) {
     const resourcePath = getLanguageFolderPath(buildPath, platform);
     const excludedLanguages = languages.map(l => `${l}.${getLanguageFileExtension(platform)}`);
     const languageFolders = walkLanguagePaths(resourcePath, platform);
+    const excludedFolders = languageFolders.filter(langFolder => !excludedLanguages.includes(langFolder));
 
-    languageFolders
-      .filter(langFolder => !excludedLanguages.includes(langFolder))
-      .forEach(langFolder => rimraf.sync(path.resolve(resourcePath, langFolder)));
+    d('Removing %d of %d languages from the packaged app.', excludedFolders.length, languageFolders.length);
+    excludedFolders.forEach(langFolder => rimraf.sync(path.resolve(resourcePath, langFolder)));
 
     callback();
   };
