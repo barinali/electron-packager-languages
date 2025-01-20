@@ -8,7 +8,7 @@ Electron Packager Plugin: Languages
 
 # Reason
 
-After packaging a MacOS application, it contains all possible languages whether it supports or not. Then all those languages are listed at the App Store. The folders of unsupported languages should be removed in order to hide those languages at the detail page of the product.
+After packaging an Electron application, it contains all possible languages whether it supports or not. Then all those languages are listed e.g. at the App Store. The folders of unsupported languages should be removed in order to hide those languages at the detail page of the product.
 
 # Usage
 
@@ -22,3 +22,6 @@ electronPackager({
   afterCopy: [setLanguages(['en', 'en_GB'])]
 })
 ```
+Note that different platforms have different language/locale identifiers, e.g. Windows has `en-GB` while macOS has `en_GB`. See also [issue #57](https://github.com/barinali/electron-packager-languages/issues/57).
+
+In order to protect users from accidentally removing all languages from an app, there's an `allowRemovingAll` option that defaults to `false`. It can be overridden like this: `setLanguages(['en', 'en_GB'], { allowRemoveAll: true })`.
