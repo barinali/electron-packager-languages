@@ -48,12 +48,16 @@ function walkLanguagePaths(dir, platform) {
   }
 }
 
-module.exports = function setLanguages(languages) {
+module.exports = function setLanguages(languages, { allowRemovingAll = false } = {}) {
   return function electronPackagerLanguages(buildPath, electronVersion, platform, arch, callback) {
     const resourcePath = getLanguageFolderPath(buildPath, platform);
     const excludedLanguages = languages.map(l => `${l}.${getLanguageFileExtension(platform)}`);
     const languageFolders = walkLanguagePaths(resourcePath, platform);
     const excludedFolders = languageFolders.filter(langFolder => !excludedLanguages.includes(langFolder));
+    
+    if(allowRemovingAll !== true && excludedFolders.length === languageFolders.length) {
+      throw new Error('electron-packager-languages: Refusing to remove all languages from the packaged app! Double check the supplied locale identifiers or suppress this error via the "allowRemovingAll" option.');
+    }
 
     d('Removing %d of %d languages from the packaged app.', excludedFolders.length, languageFolders.length);
     excludedFolders.forEach(langFolder => rimraf.sync(path.resolve(resourcePath, langFolder)));
