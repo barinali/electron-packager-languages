@@ -3,7 +3,7 @@ const path = require('path');
 const rimraf = require('rimraf');
 const debug = require('debug');
 
-const d = debug('electron-forge:packager:languages');
+const d = debug('electron-packager-languages');
 
 function getLanguageFolderPath(givenPath, platform) {
   switch (platform) {
