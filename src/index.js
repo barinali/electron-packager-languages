@@ -54,8 +54,8 @@ module.exports = function setLanguages(languages, { allowRemovingAll = false } =
     const includedLanguages = languages.map(l => `${l}.${getLanguageFileExtension(platform)}`);
     const languageFolders = walkLanguagePaths(resourcePath, platform);
     const excludedFolders = languageFolders.filter(langFolder => !includedLanguages.includes(langFolder));
-    
-    if(allowRemovingAll !== true && excludedFolders.length === languageFolders.length) {
+
+    if (allowRemovingAll !== true && excludedFolders.length === languageFolders.length) {
       throw new Error('electron-packager-languages: Refusing to remove all languages from the packaged app! Double check the supplied locale identifiers or suppress this error via the "allowRemovingAll" option.');
     }
 
